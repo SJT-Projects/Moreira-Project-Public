@@ -1,8 +1,8 @@
 # Despliegue de Moreira en Vercel
 
-Vercel detecta `index.py` como una aplicación FastAPI y publica los archivos de
-`public/` en su CDN. El frontend se compila con `API_BASE_URL` vacío para que
-consuma la API en el mismo dominio.
+Vercel despliega el servicio `moreira` definido en `vercel.json`. `index.py`
+expone FastAPI y sirve la compilación de `public/`. El frontend se compila con
+`API_BASE_URL` vacío para que consuma la API en el mismo dominio.
 
 ## Variables privadas
 
