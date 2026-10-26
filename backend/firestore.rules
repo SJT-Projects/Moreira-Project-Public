@@ -1,0 +1,11 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Los datos pasan por FastAPI y se autorizan con Firebase Auth + IAM.
+    // Ningún cliente Flutter accede directamente a los documentos.
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

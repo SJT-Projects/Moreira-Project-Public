@@ -1,0 +1,22 @@
+{
+  "indexes": [
+    {
+      "collectionGroup": "reportes",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {"fieldPath": "estado_moderacion", "order": "ASCENDING"},
+        {"fieldPath": "creado_en", "order": "DESCENDING"},
+        {"fieldPath": "__name__", "order": "DESCENDING"}
+      ]
+    },
+    {
+      "collectionGroup": "reportes",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {"fieldPath": "autor_uid", "order": "ASCENDING"},
+        {"fieldPath": "creado_en", "order": "DESCENDING"}
+      ]
+    }
+  ],
+  "fieldOverrides": []
+}

@@ -1,0 +1,35 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Backend (FastAPI)",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "uvicorn",
+      "args": ["main:app", "--reload", "--host", "127.0.0.1", "--port", "8000"],
+      "cwd": "${workspaceFolder}/backend",
+      "python": "${workspaceFolder}/backend/.venv/Scripts/python.exe",
+      "jinja": true
+    },
+    {
+      "name": "Frontend (Flutter Web)",
+      "type": "dart",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/frontend",
+      "program": "lib/main.dart",
+      "deviceId": "chrome",
+      "args": [
+        "--web-hostname", "localhost",
+        "--web-port", "60891",
+        "--dart-define-from-file=dart_defines.json"
+      ]
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Moreira completo (backend + frontend)",
+      "configurations": ["Backend (FastAPI)", "Frontend (Flutter Web)"],
+      "stopAll": true
+    }
+  ]
+}

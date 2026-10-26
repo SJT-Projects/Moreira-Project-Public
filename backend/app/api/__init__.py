@@ -1,0 +1,1 @@
+"""Rutas versionadas de FastAPI."""
