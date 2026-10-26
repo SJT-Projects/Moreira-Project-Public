@@ -14,6 +14,7 @@ class Settings(BaseSettings):
     )
 
     firebase_project_id: str = ""
+    firebase_service_account_json: str = ""
     indicator_hmac_secret: str = ""
     groq_api_key: str = ""
     groq_model: str = "openai/gpt-oss-120b"

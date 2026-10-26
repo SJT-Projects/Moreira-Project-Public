@@ -33,6 +33,9 @@ migrate_working_dir/
 /build/
 /coverage/
 
+# Vercel local metadata
+.vercel/
+
 # Symbolication related
 app.*.symbols
 

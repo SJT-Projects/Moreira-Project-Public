@@ -1,9 +1,10 @@
 import logging
+import json
 import threading
 from typing import Any
 
 import firebase_admin
-from firebase_admin import auth, firestore
+from firebase_admin import auth, credentials, firestore
 
 from app.core.config import get_settings
 
@@ -43,7 +44,19 @@ def _get_app() -> firebase_admin.App:
             return firebase_admin.get_app()
         except ValueError:
             try:
-                app = firebase_admin.initialize_app(options={"projectId": settings.firebase_project_id})
+                credential = None
+                if settings.firebase_service_account_json:
+                    try:
+                        service_account = json.loads(settings.firebase_service_account_json)
+                    except (json.JSONDecodeError, TypeError) as exc:
+                        raise RuntimeError(
+                            "FIREBASE_SERVICE_ACCOUNT_JSON no contiene JSON válido."
+                        ) from exc
+                    credential = credentials.Certificate(service_account)
+                app = firebase_admin.initialize_app(
+                    credential=credential,
+                    options={"projectId": settings.firebase_project_id},
+                )
                 _initialization_error = None
                 return app
             except Exception as exc:

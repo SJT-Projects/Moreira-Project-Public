@@ -6,6 +6,8 @@ El frontend de Flutter que se debe ejecutar está en `frontend/`. El backend est
 
 **Guía paso a paso para Windows + VS Code:** [docs/GUIA_EJECUCION_LOCAL.md](docs/GUIA_EJECUCION_LOCAL.md).
 
+**Despliegue público en Vercel:** [docs/DESPLIEGUE_VERCEL.md](docs/DESPLIEGUE_VERCEL.md). El directorio `public/` contiene la compilación web que Vercel sirve y `index.py` expone FastAPI en el mismo dominio.
+
 ## Configurar la API local
 
 Requiere Python 3.11 o superior. Desde PowerShell, en la raíz del repositorio:
