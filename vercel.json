@@ -1,24 +1,8 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "services": {
-    "moreira": {
-      "root": ".",
-      "entrypoint": "index.py",
-      "framework": "fastapi",
-      "maxDuration": 60,
-      "includeFiles": [
-        "backend/**",
-        "public/**",
-        "requirements.txt"
-      ]
+  "functions": {
+    "index.py": {
+      "maxDuration": 60
     }
-  },
-  "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": {
-        "service": "moreira"
-      }
-    }
-  ]
+  }
 }

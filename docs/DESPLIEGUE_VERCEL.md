@@ -1,8 +1,9 @@
 # Despliegue de Moreira en Vercel
 
-Vercel despliega el servicio `moreira` definido en `vercel.json`. `index.py`
-expone FastAPI y sirve la compilación de `public/`. El frontend se compila con
-`API_BASE_URL` vacío para que consuma la API en el mismo dominio.
+Vercel detecta `index.py` como un proyecto FastAPI estándar. La misma aplicación
+sirve la compilación de Flutter guardada en `public/`, por lo que no hace falta
+usar Vercel Services ni crear dos proyectos. El frontend se compila con
+`API_BASE_URL` vacío para consumir la API en el mismo dominio.
 
 ## Variables privadas
 
